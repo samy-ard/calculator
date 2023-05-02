@@ -124,6 +124,7 @@ html, body {
 
 .c-switcher::-webkit-slider-thumb,
 .c-switcher::-moz-range-thumb {
+	-webkit-appearance: none;
 	appearance: none;
 	border: none;
 	width: 1rem;
