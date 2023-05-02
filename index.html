@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Frontend Mentor | Calculator app</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+  <main class="main">
+    <div class="calculator">
+      <header class="c-header">
+        <a href="#" class="c-brand">
+          <span class="c-logo">calc</span>
+        </a>
+        <div class="c-theme-switcher">
+          <span class="c-switcher-heading">Theme</span>
+          <div class="c-switcher-wrapper">
+            <div class="c-switcher-labels">
+              <label class="c-switcher-label" for="c-switcher" data-value="1">1</label>
+              <label class="c-switcher-label" for="c-switcher" data-value="2">2</label>
+              <label class="c-switcher-label" for="c-switcher" data-value="3">3</label>
+            </div>
+            <input id="c-switcher" type="range" class="c-switcher" name="theme-switcher" min="1" value="1" max="3" value="1">
+          </div>
+        </div>
+      </header>
+      <div class="c-screen">
+        <div class="c-screen-inner">399.981</div>
+      </div>
+      <div class="c-keys">
+        <button type="button" class="btn-key" value="7">7</button>
+        <button type="button" class="btn-key" value="8">8</button>
+        <button type="button" class="btn-key" value="9">9</button>
+        <button type="button" class="btn-key btn-delete" value="Delete">del</button>
+        <button type="button" class="btn-key" value="4">4</button>
+        <button type="button" class="btn-key" value="5">5</button>
+        <button type="button" class="btn-key" value="6">6</button>
+        <button type="button" class="btn-key btn-operator" value="+">+</button>
+        <button type="button" class="btn-key" value="1">1</button>
+        <button type="button" class="btn-key" value="2">2</button>
+        <button type="button" class="btn-key" value="3">3</button>
+        <button type="button" class="btn-key btn-operator" value="-">-</button>
+        <button type="button" class="btn-key btn-operator" value=".">.</button>
+        <button type="button" class="btn-key" value="0">0</button>
+        <button type="button" class="btn-key btn-operator" value="/">/</button>
+        <button type="button" class="btn-key btn-operator" value="*">x</button>
+        <button type="button" class="btn-key btn-reset" value="Reset">Reset</button>
+        <button type="button" class="btn-key btn-result" value="=">=</button>
+      </div>
+    </div>
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

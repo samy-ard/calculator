@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap');
+
+* {
+	box-sizing: border-box;
+	transition: all 0.5s ease-in-out;
+}
+
+:root {
+	color-scheme: light dark;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: 'League Spartan', sans-serif;
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: 700;
+}
+
+.main {
+	min-height: 100vh;
+	background-color: var(--main-bkg);
+	--main-bkg: #3a4764;
+	--logo-color: #ffffff;
+	--switcher-bkg: #232c43;
+	--switcher-thumb-bkg: #d03f2f;
+	--switcher-thumb-hover: #f96c5b;
+	--switcher-text: #ffffff;
+	--screen-text: #ffffff;
+	--screen-bkg: #182034;
+	--keyboard-bkg: #232c43;
+	--key-text: #444b5a;
+	--key-text-alt: #ffffff;
+	--key-bkg: #eae3dc;
+	--key-bkg-alt: #637097;
+	--key-shadow: #b4a597;
+	--key-shadow-alt: #404e72;
+	--key-bkg-hover: #ffffff;
+	--key-bkg-alt-hover: #a2b3e1;
+	--key-special-text: #ffffff;
+	--key-special-bkg: #d03f2f;
+	--key-special-shadow: #8f2316;
+	--key-special-bkg-hover: #f96c5b;
+}
+
+.calculator {
+	font-size: 2em;
+	padding: 1.875rem 1.5rem;
+	max-width: 23.4375rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* HEADER */
+.c-header {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 0 1.0625em;
+	justify-content: space-between;
+}
+
+.c-brand {
+	display: block;
+	padding-left: .375rem;
+	text-decoration: none;
+}
+
+.c-logo {
+	color: var(--logo-color);
+	display: block;
+	margin-top: 0.4375rem;
+	line-height: 1;
+}
+
+.c-theme-switcher {
+	display: flex;
+	flex-wrap: wrap;
+	text-transform: uppercase;
+}
+
+.c-switcher-wrapper {
+	width: 4.5rem;
+}
+
+.c-switcher-heading {
+	color: var(--switcher-text);
+	font-size: 0.75rem;
+	margin-right: 1.6875rem;
+	letter-spacing: 0.05rem;
+	margin-top: auto;
+	margin-bottom: 0.125rem;
+}
+
+.c-switcher-labels {
+	color: var(--switcher-text);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0 .25rem;
+	font-size: 0.625rem;
+	margin-bottom: 0.4375rem;
+}
+
+.c-switcher-label {
+	line-height: 1;
+	display: block;
+	width: .25rem;
+	margin: 0 .5rem;
+	text-align: center;
+}
+
+.c-switcher {
+	display: block;
+	cursor: pointer;
+	appearance: none;
+	width: 100%;
+	height: 1.5rem;
+	margin: 0;
+	padding: 0.25rem 0.375rem;
+	border-radius: 0.75rem;
+	background-color: var(--switcher-bkg);
+}
+
+.c-switcher::-webkit-slider-thumb,
+.c-switcher::-moz-range-thumb {
+	appearance: none;
+	border: none;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background-color: var(--switcher-thumb-bkg);
+}
+
+.c-switcher:hover::-webkit-slider-thumb,
+.c-switcher:hover::-moz-range-thumb {
+	background-color: var(--switcher-thumb-hover);
+}
+
+/* BODY */
+.c-screen {
+	font-size: 2.5rem;
+	line-height: 1;
+	height: 5.5rem;
+	text-align: right;
+	letter-spacing: -.05rem;
+	padding: 1.5rem 1.5rem;
+	border-radius: .5rem;
+	margin-bottom: 1.5rem;
+	color: var(--screen-text);
+	background-color: var(--screen-bkg);
+}
+
+.c-screen-inner {
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.c-keys {
+	display: grid;
+	grid-gap: 1.0625rem .75rem;
+	grid-template-columns: repeat(4, 1fr);
+	padding: 1.5rem;
+	border-radius: .5rem;
+	background-color: var(--keyboard-bkg);
+}
+
+.btn-key {
+	position: relative;
+	cursor: pointer;
+	font: inherit;
+	line-height: 1;
+	border: none;
+	text-align: center;
+	padding: 1.125rem .5rem .625rem;
+	border-radius: .25rem;
+	color: var(--key-text);
+	box-shadow: 0 0.25rem 0 var(--key-shadow);
+	background-color: var(--key-bkg);
+}
+
+.btn-key:hover {
+	background-color: var(--key-bkg-hover);
+}
+
+.btn-reset, .btn-result {
+	grid-column-end: span 2;
+}
+
+.btn-result, .btn-reset, .btn-delete {
+	text-transform: uppercase;
+	font-size: 1.25rem;
+	padding: 1.0625em .5rem .9375rem;
+}
+
+.btn-result {
+	color: var(--key-special-text);
+	box-shadow: 0 0.25rem 0 var(--key-special-shadow);
+	background-color: var(--key-special-bkg);
+}
+
+.btn-result:hover {
+	background-color: var(--key-special-bkg-hover);
+}
+
+.btn-delete, .btn-reset {
+	color: var(--key-text-alt);
+	background-color: var(--key-bkg-alt);
+	box-shadow: 0 0.25rem 0 var(--key-shadow-alt);
+}
+
+.btn-delete:hover, .btn-reset:hover {
+	background-color: var(--key-bkg-alt-hover);
+}
+
+/* RESPONSIVE */
+@media screen and (min-width: 992px) {
+	.calculator {
+		padding: 2.9375em .75em;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 36.625rem;
+	}
+
+	.c-header {
+		padding-bottom: 2rem;
+	}
+
+	.c-logo {
+		margin-top: .875rem;
+	}
+
+	.c-switcher-heading {
+		margin-right: 1.5625rem;
+		margin-bottom: .375rem;
+	}
+
+	.c-switcher-labels {
+		font-weight: 400;
+		font-size: .875rem;
+		margin-bottom: .5rem;
+	}
+
+	.c-screen {
+		font-size: 3.3125rem;
+		letter-spacing: 0;
+		padding: 2.5rem 2rem;
+		height: 8rem;
+	}
+
+	.c-keys {
+		grid-gap: 1.75rem 1.5625rem;
+		padding: 2rem 1.875rem 2.25rem;
+	}
+
+	.btn-key {
+		font-size: 2.5rem;
+		border-radius: .75rem;
+		padding: .8125rem .625rem .4375rem;
+	}
+
+	.btn-result, .btn-reset, .btn-delete {
+		font-size: 1.75rem;
+		padding: 1.0625rem .5rem .9375rem;
+	}
+}
+
+.light-theme {
+	--main-bkg: #e6e6e6;
+	--logo-color: #35352c;
+	--switcher-bkg: #d1cccc;
+	--switcher-thumb-bkg: #ca5502;
+	--switcher-thumb-hover: #ff8b38;
+	--switcher-text: #35352c;
+	--screen-text: #35352c;
+	--screen-bkg: #ededed;
+	--keyboard-bkg: #d1cccc;
+	--key-text: #35352c;
+	--key-text-alt: #ffffff;
+	--key-bkg: #e5e4e1;
+	--key-bkg-alt: #377f86;
+	--key-shadow: #a69d91;
+	--key-shadow-alt: #404e72;
+	--key-bkg-hover: #ffffff;
+	--key-bkg-alt-hover: #62b5bd;
+	--key-special-text: #ffffff;
+	--key-special-bkg: #ca5502;
+	--key-special-shadow: #893901;
+	--key-special-bkg-hover: #ff8b38;
+}
+
+@media screen and (prefers-colors-scheme: light) {
+	.main {
+		--main-bkg: #e6e6e6;
+		--logo-color: #35352c;
+		--switcher-bkg: #d1cccc;
+		--switcher-thumb-bkg: #ca5502;
+		--switcher-thumb-hover: #ff8b38;
+		--switcher-text: #35352c;
+		--screen-text: #35352c;
+		--screen-bkg: #ededed;
+		--keyboard-bkg: #d1cccc;
+		--key-text: #35352c;
+		--key-text-alt: #ffffff;
+		--key-bkg: #e5e4e1;
+		--key-bkg-alt: #377f86;
+		--key-shadow: #a69d91;
+		--key-shadow-alt: #404e72;
+		--key-bkg-hover: #ffffff;
+		--key-bkg-alt-hover: #62b5bd;
+		--key-special-text: #ffffff;
+		--key-special-bkg: #ca5502;
+		--key-special-shadow: #893901;
+		--key-special-bkg-hover: #ff8b38;
+	}
+}
+
+.dark-theme {
+	--main-bkg: #160628;
+	--logo-color: #ffe53d;
+	--switcher-bkg: #1d0934;
+	--switcher-thumb-bkg: #00e0d1;
+	--switcher-thumb-hover: #94fff9;
+	--switcher-text: #ffe53d;
+	--screen-text: #ffe53d;
+	--screen-bkg: #1d0934;
+	--keyboard-bkg: #1d0934;
+	--key-text: #ffe53d;
+	--key-text-alt: #ffffff;
+	--key-bkg: #341c4f;
+	--key-bkg-alt: #58077d;
+	--key-shadow: #871c9c;
+	--key-shadow-alt: #bc15f4;
+	--key-bkg-hover: #6b34ac;
+	--key-bkg-alt-hover: #8432ae;
+	--key-special-text: #1b2428;
+	--key-special-bkg: #00e0d1;
+	--key-special-shadow: #6cf9f2;
+	--key-special-bkg-hover: #94fff9;
+}
+
+@media screen and (prefers-colors-scheme: dark) {
+	.main {
+		--main-bkg: #160628;
+		--logo-color: #ffe53d;
+		--switcher-bkg: #1d0934;
+		--switcher-thumb-bkg: #00e0d1;
+		--switcher-thumb-hover: #94fff9;
+		--switcher-text: #ffe53d;
+		--screen-text: #ffe53d;
+		--screen-bkg: #1d0934;
+		--keyboard-bkg: #1d0934;
+		--key-text: #ffe53d;
+		--key-text-alt: #ffffff;
+		--key-bkg: #341c4f;
+		--key-bkg-alt: #58077d;
+		--key-shadow: #871c9c;
+		--key-shadow-alt: #bc15f4;
+		--key-bkg-hover: #6b34ac;
+		--key-bkg-alt-hover: #8432ae;
+		--key-special-text: #1b2428;
+		--key-special-bkg: #00e0d1;
+		--key-special-shadow: #6cf9f2;
+		--key-special-bkg-hover: #94fff9;
+	}
+}
